@@ -1,0 +1,846 @@
+/*
+Theme Name: Gameteller - Main Theme
+Theme URI: http://www.gameteller.net
+Description: Theme for Gameteller.net website. In production.
+Version: 0.1
+Author: Chris Gates
+Author URI: http://www.christhewriter.com
+*/
+
+
+/** BEGIN RESET **/
+* {
+    margin  : 0;
+    padding : 0;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing    : border-box;
+    box-sizing         : border-box;
+}
+h1,h2,h3,h4,h5,h6,p { margin-bottom : 6pt; }
+ol,ul,dl { list-style-position : inside;}
+
+* {
+    -webkit-user-select : none;
+    -khtml-user-select  : none;
+    -moz-user-select    : -moz-none;
+    -o-user-select      : none;
+    -ms-user-select     : none;
+    user-select         : none;
+
+    -webkit-user-drag : none;
+    -moz-user-drag    : none;
+    user-drag         : none;
+
+    -webkit-tap-highlight-color : transparent;
+    -webkit-touch-callout       : none;
+}
+
+input, textarea, .spa-x-user-select {
+    -webkit-user-select : text;
+    -khtml-user-select  : text;
+    -moz-user-select    : text;
+    -o-user-select      : text;
+    -ms-user-select     : text;
+    user-select         : text;
+}
+
+/** END RESET */
+
+/** BEGIN BOOTSTRAP SAME-COLUMN CODE -- http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height */
+/* columns of same height styles */
+.container-xs-height {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+}
+.row-xs-height {
+    display:table-row;
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+}
+@media (min-width: 768px) {
+    .container-sm-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-sm-height {
+        display:table-row;
+    }
+    .col-sm-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 992px) {
+    .container-md-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-md-height {
+        display:table-row;
+    }
+    .col-md-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 1200px) {
+    .container-lg-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-lg-height {
+        display:table-row;
+    }
+    .col-lg-height {
+        display:table-cell;
+        float:none;
+    }
+}
+
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
+}
+
+/* fix firefox responsive images */
+.img-responsive {
+    width: 100%
+}
+/** END BOOSTSTRAP SAME-COLUMN CODE */
+
+
+/**
+Load fonts to make faster for testing -- REMOVE FOR PRODUCTION
+*/
+
+@font-face {
+  font-family: 'Nes Controller CAD';
+  src: url('fonts/nes-controller-cad.ttf');
+}
+
+html
+{
+}
+
+body
+{
+    /**background: linear-gradient(#e0e0e0,#e0e0e0,#5a5a5a);*/
+    background: linear-gradient(#e1dfd9,#8b937d);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    font-family: Arial, Helvetica, Geneva, sans-serif;   
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+a
+{
+    color: #a13323;
+}
+
+
+h2
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3px;
+    font-family: 'Play', Arial, serif;
+    font-size: 130%;
+    font-weight: 800;
+}
+
+#content
+{
+    margin: 25px auto 0 auto;
+    padding: 0;
+    font-family: 'Roboto Slab', Arial, serif;
+    font-size: 1em;
+    line-height:1.2em;
+    max-width: 1200px;
+}
+
+.nopadding
+{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.blue-transparent
+{
+    background-color: rgba(54,69,184,.7);
+}
+
+.green-transparent
+{
+    background-color: rgba(66,138,65,.7);
+}
+
+.yellow-transparent
+{
+    background-color: rgba(270,164,81,.7);
+}
+
+.red-transparent
+{
+    background-color: rgba(171,36,50,.7);
+}
+
+.blue
+{
+    background-color: #3645b8;
+}
+
+.green
+{
+    background-color: #428a41;
+}
+
+.yellow
+{
+    background-color: #dea451;
+}
+
+.red
+{
+    background-color: #ab2434;
+}
+
+.purple
+{
+    background-color: #6b46e3;
+}
+
+.drop-shadow
+{
+	-webkit-box-shadow: 5px 0 3px -2px #888;
+    box-shadow: 5px 0 3px -2px #888;
+}
+
+.alignleft
+{
+	text-align: left;
+}
+
+.alignright
+{
+	text-align: right;
+}
+
+.aligncenter
+{
+	text-align: center;
+}
+
+.full-height
+{
+	height: 100%;
+}
+
+/** HEADER */
+
+header
+{
+    display: block;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+    border-radius: 7px 0 0 0;
+    color: #fff;
+    position: relative;
+    background-color: #374237;
+}
+
+/* Hack to get around the boostrap css defaults. Stupid bootstrap! */
+.header-padding
+{
+	padding: 0;
+}
+
+.logobar
+{
+    margin-right: auto;
+    margin-top: -5px;
+    background-color: #374237;
+    border-radius: 7px 0 0 0;
+    border-bottom: 3px #fff solid;
+    padding-top: 5px;
+}
+
+.logo img
+{
+    width: 100%;
+}
+
+.tagline
+{
+	background-color: #374237;
+	font-weight: 600;
+	text-align: left;
+	padding: 10px;
+}
+
+/** CONTENT - CATEGORY MENU */
+
+.side-menu-box
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #374237;
+	position: absolute;
+	
+}
+
+.sidenav
+{
+	width: 100%;
+	text-align: center;
+	min-height: 100%;
+}
+
+#menu-category-menu
+{
+	font-size: 170%;
+	font-family: 'NES Controller Cad', 'Play', Arial;
+	line-size: 1em;
+	width: 100%;
+}
+
+#menu-category-menu > .menu-item
+{
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 10px;
+	text-transform: uppercase;
+	text-align: left;
+	vertical-align: center;
+	background-color: #374237;
+	border-top: 1px #fff solid;
+}
+
+#menu-category-menu li:first-child 
+{
+   border-top: none;
+}
+
+#menu-category-menu li:last-child 
+{
+   border-bottom: 1px #fff solid;
+}
+
+#menu-category-menu > .menu-item a
+{
+	color: #fff;
+}
+
+#menu-category-menu > .menu-item:hover
+{
+	background-color: #8b937d;
+}
+
+#menu-category-menu > .menu-item:hover a
+{
+	text-decoration: none;
+	color: #a13323;
+}
+
+.category-menu
+{
+}
+
+.contact-info, .contact-info a
+{
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 3px;
+	color: #fff;
+	text-decoration: none;
+	padding-top: 10px;
+	font-size: 90%;
+
+}
+
+.contact-info a, a:hover
+{
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+/** CONTENT - FRONT PAGE */
+
+.feed
+{
+	padding: 0;
+	margin: 0;
+	padding-left:15px;
+	background-color: #fff;
+	min-height: 70%;
+	padding-bottom: 35px;
+}
+
+.main-content
+{
+    display: block;
+    margin: 0;
+    padding: 3px;
+    height: 300px;
+}
+
+.main-content.featured
+{
+    height:440px;
+}
+
+
+.article-wrapper
+{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.feature
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 25%;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    opacity: .75;
+}
+
+.feature-info
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.feature-background
+{
+    padding: 3px;
+    margin: 0;
+}
+
+.feature-headline
+{
+    display: inline-block;
+}
+
+.feature-headline h2
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+    font-family: 'Play', Arial, serif;
+    font-size: 130%;
+    font-weight: 800;
+}
+
+.feature-headline h3
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+    font-family: 'Play', Arial, serif;
+    font-size: 110%;
+    font-weight: 800;
+}
+
+.reveal-link
+{
+	cursor: pointer;
+}
+
+.front-page-link
+{
+    background: rgba(255,255,255,.9);
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    display: block;
+    color: #333;
+    text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.front-page-link:hover, .front-page-link > .summary
+{
+	color: #333;
+}
+
+
+.front-page-link:hover
+{
+	text-decoration: none;
+}
+
+.front-page-link h2
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: 'Play', Arial, serif;
+    font-size: 130%;
+    font-weight: 800;
+    text-decoration: none;
+    color: #a13323;
+}
+
+.front-page-link > .summary, .front-page-link h2
+{
+	padding: 5px;
+}
+
+.read-more
+{
+    display:block;
+    margin-top: 10px;
+    font-family: play;
+    font-weight: 600;
+    text-decoration: none;
+    color: #a13323;
+}
+
+.underline-on-hover:hover
+{
+    text-decoration: underline;
+}
+
+.page-links
+{
+	font-size: 120%;
+	font-family: 'Play', Arial, sans-serif;
+	font-weight: 600;
+	padding: 0;
+	margin: 0;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	color: #a13323;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+
+}
+
+.page-links a:hover
+{
+	color: #a13323;
+	font-weight: 600;
+}
+
+.pagination
+{
+	display: inline-block;
+	width: 45%;
+	padding: 0 10px;
+}
+
+/* CONTENT -- ARTICLE PAGE */
+
+.article
+{
+	width: 100%;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	padding-left: 20px;
+	min-height: 100%;
+}
+
+.article-genre h3
+{
+	padding: 3px 0 3px 3px;
+    margin: 0;
+    font-family: 'Play', Arial, serif;
+    font-size: 110%;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.article-hero-info
+{
+	color: #ababab;
+	width: 100%;
+	font-family: 'Play',Georgia, sans-serif;
+}
+
+
+.article-hero-info a
+{
+	text-decoration: underline;
+	color: #ababab;
+}
+
+.photo-credits
+{
+	font-style: italic;
+	font-size: 90%;
+}
+
+
+.sharebuttons ul
+{
+	display: inline;
+}
+
+.sharebuttons li
+{
+	display: inline-block;
+}
+
+.hero-img
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 40%;
+    display: block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.article h1
+{
+	font-family: 'Raleway', Arial, serif;
+	font-size: 225%;
+	font-weight: 800;
+}
+
+.article h2
+{
+	font-family: 'Raleway', Arial, serif;
+	font-size: 150%;
+	font-weight: 800;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.article-credits
+{
+	font-family: 'Play',Georgia, sans-serif;
+}
+
+.article-content
+{
+	font-size: 1.2em;
+	line-height: 1.4em;
+	margin-bottom: 80px;
+}
+
+.article-content p
+{
+	margin-bottom: 15px;
+}
+
+.article-img
+{
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	font-family: 'Play',Georgia, sans-serif;
+	color: #2e2e2e;
+	font-style: italic;
+	font-size: .9em;
+	line-height: .9em;
+}
+
+.article-img img
+{
+	width: 75%;
+	display: inline-block
+}
+
+.article-img-caption
+{
+	display: inline-block;
+	width: 75%;
+}
+
+.sharelinks
+{
+	font-family: 'Play', Arial, sans-serif;
+	font-weight: 600;
+	font-size: 120%;
+	margin: 0;
+	padding: 0;
+	height: auto;
+	position: absolute;
+	bottom: 15px;
+}
+
+.sharelinks .shareicon
+{
+	margin: 0 5px 0 15px;
+}
+
+/* FOOTER */
+
+.foot
+{
+	width: 100%;
+	text-align: center;
+	font-family: 'Play', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	margin-top: 3px;
+	background-color: #8b937d;
+	overflow: auto;
+	height: auto;
+	display: inline-block;
+}
+
+.foot hr
+{
+	margin: 0;
+	padding: 0;
+}
+
+.foot li
+{
+	display: inline;
+}
+
+.foot ul
+{
+	margin: 0;
+}
+
+#menu-footer-menu li:last-child:after 
+{
+   display: none;
+}
+
+#menu-footer-menu li:after
+{
+   content: ' \2022';
+   color: #a13323;
+}
+
+#menu-footer-menu a
+{
+	color: #22231e;
+}
+
+/* RIBBON - FRONT PAGE (RECOMMENDATIONS) */
+
+.ribbon 
+{
+  background-color: #428a41;
+  overflow: hidden;
+  white-space: nowrap;
+   position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  -webkit-box-shadow: 2px 2px 5px -2px #000;
+  box-shadow: 2px 2px 5px -2px #000;
+}
+
+.ribbon-text {
+  color: #fff;
+  display: block;
+  font-family: 'Play', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 70%;
+  margin: 1px 0;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* MEDIA QUERIES -- RESPONSIVE */
+ @media (max-width: 767px) 
+ { 
+    .top-menu
+    {
+    	text-align: center;
+    }
+    
+    header
+    {
+    	height: auto;
+    }
+    
+    .logobox
+    {
+    	border: 0;
+    }
+    
+    .tagline
+    {
+    	text-align: center;
+    }
+    
+    .feed
+    {
+    	padding-left: 0;
+    }
+    
+    .main-content
+    {
+        height: 300px;
+    }
+    .main-content.featured
+    {
+        height: 300px;
+    }
+
+    
+    .sharelinks
+    {
+    	position: relative;
+    }
+    
+}
